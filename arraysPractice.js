@@ -78,11 +78,20 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 //Write a function called divider that is given one argument, numbersArray.
 //Have divider return an Array with the first item in the array being the evens array (all the even values from numbersArray) and the second item in the Array being the odds array (all the odd values from numbersArray).
+var evenArray = [];
+var oddArray = [];
+var finalArray = [evenArray, oddArray];
+function divider(numbersArray) {
+  for (i = 0; i < numbersArray.length; i++) {
+    if (numbersArray[i] % 2 !== 0) {
+      oddArray.push(numbersArray[i]);
+    } else {
+      evenArray.push(numbersArray[i]);
+    }
+  }
+return finalArray;
 
-
-
-  //Code Here
-
+}
 
 //Next Problem
 
@@ -90,13 +99,21 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 var getRandomArbitrary = function() {
   return Math.floor(Math.random() * (30 - 0) + 0);
 };
-// var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
+var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 //Above you're given a function that will return a random number between 0 and 30.  There is also a commented out array full of numbers to help you visualize what your function will be receiving.
 
 // Your job is to write a function named finder that will get a random number (by invoking getRandomArbitrary), then loop through the array (that will be passed in as a parameter) to see if that random number is in the array. If it is, return true, if it's not, return false
 
   //Code Here
-
+function finder(numbers) {
+  var result = false;
+  for (i = 0, i < numbers.length, i++) {
+    if (numbers[i] === getRandomArbitrary) {
+      result = true;
+    }
+  }
+  return result;
+}
   //Code Here
 
 
@@ -107,8 +124,9 @@ var getRandomArbitrary = function() {
 var str = 'this is my sentence';
 //Write a function called reverse that takes a given str as it's only argument and returns that string after it's been reversed
 
-  //Code Here
-
+function reverse(str) {
+  return str.split('').reverse().join('');
+}
 
 //Next Problem
 
