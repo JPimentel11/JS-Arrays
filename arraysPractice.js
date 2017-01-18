@@ -144,10 +144,22 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   and the second is an item to add to your grocery list. In addItem add the item you passed in to
   myGroceryList then return the new, updated grocery list.
 
-  In both the removeItem function and the addItem function, you will also need to check for valid aurguments. Specrunner will try to call your functions without passing in valid aurguments. When this happens, you will need to respond by returning an empty array.
+  In both the removeItem function and the addItem function, you will also need to check for valid arguments. Specrunner will try to call your functions without passing in valid aurguments. When this happens, you will need to respond by returning an empty array.
 */
+function removeItem(myGroceryList, item) {
+  var i = myGroceryList.length;
+  while (i--) {
+    if (item === myGroceryList[i]) {
+      myGroceryList.splice(i, 1)
+    }
+  }
+  return myGroceryList;
+}
 
-  //Code Here
+function addItem(myGroceryList, item) {
+  myGroceryList.push(item);
+  return myGroceryList;
+}
 
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
@@ -160,8 +172,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 
-  //Code Here
-
+function maker() {
+  var arr = [];
+  for (i = 1; i < 216; i++) {
+    arr.push(i);
+  }
+  return arr;
+}
 
 
 //Next Problem
@@ -171,7 +188,9 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //Write a function called addTen that is given 'numbers' as it's only argument and returns a new
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
-  //Code Here
+function addTen(numbers) {
+  
+}
 
 
 
