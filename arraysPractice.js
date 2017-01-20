@@ -5,11 +5,9 @@ var arr = [10,20,30];
 //Create a function named 'first' that is given 'arr' as the argument and  returns the first item in the given array.
 
   //Code Here
-function first(arr){
+function first(arr) {
   return arr[0];
 }
-
-console.log(first());
 
 //Next problem
 
@@ -20,11 +18,9 @@ var arr = [40,50,60];
 
 
   //Code Here
-function last(arr){
+function last(arr) {
   return arr[last.length + 1];
 }
-
-console.log(last(arr));
 
 //Next Problem
 
@@ -50,7 +46,7 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
   //Code Here
 function reversedLooper(letters){
   for (var i = letters.length - 1; i >= 0; i--){
-    alert(letters[i])
+    alert(letters[i]);
   }
 }
 
@@ -63,7 +59,7 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
   //Code Here
   function evenFinder(nums){
     var i = nums.length;
-    while (i--){
+    while (i--) {
       if (nums[i] % 2 !== 0){
         nums.splice(i, 1);
       }
@@ -107,8 +103,8 @@ var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
   //Code Here
 function finder(numbers) {
   var result = false;
-  for (i = 0, i < numbers.length, i++) {
-    if (numbers[i] === getRandomArbitrary) {
+  for (i = 0; i < numbers.length; i++) {
+    if (numbers[i] === getRandomArbitrary()) {
       result = true;
     }
   }
@@ -147,16 +143,22 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   In both the removeItem function and the addItem function, you will also need to check for valid arguments. Specrunner will try to call your functions without passing in valid aurguments. When this happens, you will need to respond by returning an empty array.
 */
 function removeItem(myGroceryList, item) {
+  if (typeof myGroceryList !== "object") {
+    return [];
+  }
   var i = myGroceryList.length;
   while (i--) {
     if (item === myGroceryList[i]) {
-      myGroceryList.splice(i, 1)
+      myGroceryList.splice(i, 1);
     }
   }
   return myGroceryList;
 }
 
 function addItem(myGroceryList, item) {
+  if (typeof myGroceryList !== "object") {
+    return [];
+  }
   myGroceryList.push(item);
   return myGroceryList;
 }
@@ -189,7 +191,12 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
 function addTen(numbers) {
-  
+  var i = numbers.length;
+  while (i--) {
+    numbers[i] = parseInt(numbers[i]) + 10;
+
+  }
+  return numbers;
 }
 
 
